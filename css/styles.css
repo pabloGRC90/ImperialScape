@@ -121,6 +121,16 @@ a {
     border-top: 2px solid #ce0000;
 }
 
+.header-forms {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+    border-radius: 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-top: 2px solid #ce0000;
+}
+
 .navbar-inverse .navbar-toggle {
     border-color: #ce0000;
     background-color: #ce0000;
@@ -152,6 +162,13 @@ a {
     height: 50px;
     /*color:#ce0000;*/
 }
+.header-forms .navbar-brand {
+    float: left;
+    padding: 16px 15px;
+    line-height: 18px;
+    height: 50px;
+    color:#ce0000;
+}
 
 .navbar-brand b {
     color: #ce0000;
@@ -177,6 +194,11 @@ a {
     background: #fff;
     border: 0;
 }
+.header-forms .navbar {
+    margin: 0;
+    background: #fff;
+    border: 0;
+}
 
 .navbar-inverse .navbar-nav > li > a {
     color: #858585;
@@ -193,6 +215,9 @@ a {
 }
 
 .header .navbar-nav > li > a {
+    padding: 25px 18px;
+}
+.header-forms .navbar-nav > li > a {
     padding: 25px 18px;
 }
 
@@ -613,6 +638,9 @@ footer {
     .header .navbar-brand {
         padding-left: 0;
     }
+    .header-forms .navbar-brand {
+        /* padding-left: 0; */
+    }
 
     .navbar-nav {
         float: right;
@@ -647,6 +675,9 @@ footer {
     .header .navbar-nav > li > a {
         padding: 25px 12px;
     }
+    .header-forms .navbar-nav > li > a {
+        padding: 25px 12px;
+    }
 
 
     .portfolio-item:hover .folio-info {
@@ -666,6 +697,10 @@ footer {
     .header .navbar-nav > li > a {
         padding: 7px 12px;
         font-size: 14px;
+    }
+    .header-forms .navbar-nav > li > a {
+        /* padding: 7px 12px; */
+        /* font-size: 14px; */
     }
 
     .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
@@ -794,4 +829,10 @@ footer {
 
 .color-white{
     color:#fff !important;
+}
+
+
+.navbar-nav-propio{
+    float: right !important;
+
 }
