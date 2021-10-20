@@ -1,0 +1,119 @@
+INTRODUCCIÓN
+------------------------------------------------------------------------------------------------------------------
+Un grupo de marines de la Marina Imperial Japonesa se vio, no sabe muy bien cómo, encerrado en la bodega de un buque de guerra japonés de la era Sengoku (s. XVI) 
+Uno de los marines se da cuenta de que sus pies cada vez están más cubiertos de agua.
+El objetivo es salir del barco en el menor tiempo posible, calculan que en menos de 30' su vida corre peligro. 
+Para salir del barco, deberán encontrar las 5 llaves que les permitirán salir, pero… ¿cómo?
+Vamos a realizar una página web que simule este escape web. 
+
+
+Se podrán registrar usuarios que podrán:
+------------------------------------------------------------------------------------------------------------------
+- Solicitar jugar una partida: se iniciará una partida ( 3 min. 5 max Jugadores ). 
+- En una partida, el sistema irá lanzando a los jugadores de forma aleatoria enigmas.
+
+Si los jugadores los resuelven irán sumando llaves, lo que irá puntuando de forma correspondiente. 
+El primer marine que consiga una llave, y sólo éste, ascenderá a almirante. 
+Un almirante podrá decidir qué jugadores resuelven los enigmas, incluido él mismo y a partir de ese momento no lo decidirá el sistema, a no ser que tarde demasiado. 
+Cuando un marine falle un número de enigmas el almirante puede decidir que pierden tiempo y no permitirle resolver enigmas y por tanto no puntuar.
+
+- Saldrán del barco una vez hayan conseguido las 5 llaves necesarias.
+- El sistema registra para cada partida: jugadores y sus roles, puntuación, llaves conseguidas y tiempo en salir, si lo consiguieron.
+- También se podrá ver un ranking de jugadores.
+- Cada jugador podrá ver las partidas que ha jugado, con quién…
+- También podrá enviar mensajes a otros usuarios. // TAREA CANCELADA
+------------------------------------------------------------------------------------------------------------------
+
+
+
+La aplicación consta de:
+------------------------------------------------------------------------------------------------------------------
+- Página de inicio que permite entrar al sistema y enlazar a una página de registro y a otra para restaurar contraseña.
+- En la página de inicio tendremos una integración con reCaptcha de Google en el login.
+- La página de registro permitirá dar los datos personales (incluyendo el email, que servirá como usuario de inicio de sesión).
+
+    - Como usuario estándar, podremos:
+        - Solicitar comenzar una partida.
+        - Resolver enigmas dentro de una partida cuando le sean asignados.
+        - Ver ranking de jugadores.
+        - Ver las partidas que ha jugado y los datos de la partida.
+        - Enviar mensajes a otros usuarios y ver los mensajes que le han sido enviados. 
+        - A estos mensajes se les podrán adjuntar archivos, al menos uno: (optativo, pero muy valorado será que se puedan permitir adjuntar más de un archivo).
+        - Ver jugadores conectados.
+
+    - Como usuario administrador, podremos:
+        - Con un CRUD, gestionar a los usuarios, altas, bajas, modificaciones, activaciones… los usuarios estarán desactivados por defecto hasta que los active el administrador. 
+        - También se podrán crear otros administradores (o quitarles los privilegios a los actuales)
+
+    - Como usuario editor, podremos:
+        - Gestionar las preguntas que el sistema lanza como enigmas.
+        - Acceso a estadísticas internas sobre las partidas, preguntas…
+------------------------------------------------------------------------------------------------------------------
+
+
+
+Para cada módulo se tendrá en cuenta:
+------------------------------------------------------------------------------------------------------------------
+- CLIENTE:
+	- Código JavaScript estructurado y coherente, separado correctamente del resto de codificación.
+	- Utilización correcta de funciones y estructuras de almacenamiento JavaScript.
+	- Análisis del problema utilizando POO.
+	- Utilización correcta de la cadena de prototipos de JavaScript.
+	- Integración correcta de reCaptcha de Google (v3).
+	- En cuanto a la metodología empleada para su desarrollo, será una metodología Scrum (ver anexo al final) y se valorará:
+		- Planificación de tareas por unidad funcional y coherencia.
+		- Sprints desarrollando lo planificado.
+		- Proyecto sincronizado con un repositorio en Github que se envía al profesor para su seguimiento.
+        
+- SERVIDOR:
+	- Código PHP estructurado y ajustado al MVC.
+	- Conexión con BD encapsulada y con POO.
+	- Prevención de inyección de SQL.
+	- Restauración de contraseña y confirmación de registro vía email.
+	- Navegación coherente, uso correcto de las sesiones y código robusto con control de errores.
+	
+- DISEÑO
+	- Crear 2 diseños distintos (con sus correspondientes variantes en los diferentes tamaños) y para cada uno se tendrá en cuenta lo siguiente:
+	- Estudio del usuario objetivo.
+	- Caminos de navegación por los wireframes
+	- Guía de estilo: colores primarios y colores secundarios, tipografía de títulos y párrafos, logo, iconos....
+	- El código debe estar estructurado en diferentes partials de SASS, con los oportunos comentarios del código. 
+    	- Se valorará: uso adecuado de SASS.
+	- Complejidad VS necesidad, uso de CSS adecuado, confección de las reglas de forma optima.
+    	- No forzar la inclusión de CSS, pero si intentar crear un diseño mas complejo.
+	- En cuanto a diseño se valorará: equilibrio de colores, colocación de elementos, adecuación de la estética al usuario objetivo.
+	- Se debe intentar usar diferentes elementos web para poder aplicar las reglas CSS.
+	- Estructura del HTML
+	- Independencia de la visualización respecto del codigo HTML. 
+    	- Se debe poder cambiar toda la visualización, simplemente cambiando la hoja de estilo. 
+        - Los estilos deben diferenciarse no solo en la decoración CSS, sino en la úbicación y tamaño de los elementos.
+  
+- Despliegue:
+	- Se valorará un uso conveniente de la ramificación, para ello se deberán seguir como mínimo los siguientes requisitos.
+		- Mantener la master para la versión estable del producto.
+		- Crear una rama de desarrollo por unidad funcional.
+		- Se valorará el seguimiento de un flujo de trabajo como GitFlow.
+------------------------------------------------------------------------------------------------------------------
+
+
+
+- METODOLOGÍA SCRUM
+------------------------------------------------------------------------------------------------------------------
+SCRUM es una metodología ágil en la que se aplican regularmente un conjunto de buenas prácticas para trabajar en equipo y obtener el mejor resultado en el proyecto. 
+En SCRUM se realizan entregas parciales y regulares del producto final, priorizándolas según el beneficio que aportan al receptor del proyecto (cliente).
+
+- ROLES:
+	- Product Owner: analiza qué es lo que quiere el cliente final en su proyecto y lo detalla en una lista priorizada (product backlog).
+	- Scrum Master: organiza y facilita el trabajo. Defiende la metodología a llevar a cabo ante el product owner.
+	- Team: equipo de desarrolladores. Analizan las tareas del product backlog, detallan los ítems que van a contener, su prioridad y tiempo que les llevará.
+
+- SPRINTS: (El trabajo se organiza en sprints) 
+    - Cuando comienza un sprint, existe un tablero donde se encuentran todas las tareas sin asignar pendientes (backlog), y que cada desarrollador irá escogiendo (teniendo en cuenta al equipo) y asignando según sus preferencias, ritmo de trabajo...
+    - Un sprint tiene un tiempo acotado (por ejemplo 2 semanas) y en él se incluyen las tareas (historias) establecidas en el product backlog.
+    - El sprint comienza con una planificación (planning): se reúne el team, product owner y scrum master. Analizan cada tarea establecida por el product owner en el backlog. 
+        - Se prioriza, determinando la dificultad técnica por el equipo de desarrollo y se establece el tiempo que tardará en completarse. 
+        - Una vez analizada, se decide si esa tarea “cabe” en dicho sprint, en cuyo caso, el team se COMPROMETE a realizarla en dicho sprint.
+    - Cuando finaliza el sprint, se realiza una retrospectiva analizando lo que se ha hecho bien y lo que se ha hecho mal, para proponer mejoras al respecto. 
+    - Después se realiza una demo de las historias del sprint que se han completado, ante el product owner (y a veces ante el cliente final).
+    - Cada día del sprint se hará una pequeña reunión denominada daily (10’) en la que cada miembro del equipo de desarrollo cuenta en lo que ha trabajado, las dificultades y si necesita ayuda por parte del resto del equipo.
+    ------------------------------------------------------------------------------------------------------------------
