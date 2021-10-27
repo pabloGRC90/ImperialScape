@@ -179,6 +179,15 @@ function validate_registro()
             }
         }else{
             alert("Registro Exitoso");
+            // grecaptcha.ready(function() {
+            //     grecaptcha.execute('6LcprvgcAAAAAGEzoy68F67McMymAggsT0TkK6DH', {
+            //         action: 'validarUsuario'
+            //         }).then(function(token) {
+            //         $('#login-form').prepend('<input type="hidden" name="token" value="' + token + '" >');
+            //         $('#login-form').prepend('<input type="hidden" name="action" value="validarUsuario" >');
+            //         $('#login-form').submit();
+            //     });
+            // });
         }
         
     });
