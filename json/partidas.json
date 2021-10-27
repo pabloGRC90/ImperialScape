@@ -1,0 +1,67 @@
+[
+    {   "id":"001a",
+        "jugadores":[
+            {"usuario":"gserrell0@eepurl.com","nombre":"gserrell","rol":"almirante","llaves":2,"puntuacion":300},
+            {"usuario":"kmacgaughey1@wired.com","nombre":"kmacgaughey1","rol":"marine","llaves":1,"puntuacion":100},
+            {"usuario":"bflewett2@shop-pro.jp","nombre":"bflewett2","rol":"marine","llaves":1,"puntuacion":100},
+            {"usuario":"ryesichev3@wiley.com","nombre":"ryesichev3","rol":"marine","llaves":1,"puntuacion":100}  
+        ],
+        "llaves":5, 
+        "puntuacion":1165,
+        "tiempo":1235,
+        "exito": true 
+    },
+
+    {   "id":"002a",
+        "jugadores":[
+            {"usuario":"nfontes4@ezinearticles.com","nombre":"nfontes4","rol":"almirante","llaves":1,"puntuacion":200},
+            {"usuario":"gfold5@mayoclinic.com","nombre":"gfold5","rol":"marine","llaves":2,"puntuacion":200},
+            {"usuario":"ryesichev3@wiley.com","nombre":"ryesichev3","rol":"marine","llaves":1,"puntuacion":100},
+            {"usuario":"kcardinalf@about.com","nombre":"kcardinalf","rol":"marine","llaves":1,"puntuacion":100}  
+        ],
+        "llaves":5, 
+        "puntuacion":978,
+        "tiempo":1422,
+        "exito": true 
+    },
+    
+    {   "id":"003a",
+        "jugadores":[
+            {"usuario":"nfontes4@ezinearticles.com","nombre":"nfontes4","rol":"almirante","llaves":2,"puntuacion":200},
+            {"usuario":"ebransomp@illinois.edu","nombre":"ebransomp","rol":"marine","llaves":0,"puntuacion":0},
+            {"usuario":"mkochu@wikispaces.com","nombre":"mkochu","rol":"marine","llaves":1,"puntuacion":100},
+            {"usuario":"psheplandv@columbia.edu","nombre":"psheplandv","rol":"marine","llaves":0,"puntuacion":0}  
+        ],
+        "llaves":3, 
+        "puntuacion":300,
+        "tiempo":1440,
+        "exito": false 
+    },
+    
+    {   "id":"004a",
+        "jugadores":[
+            {"usuario":"pmatzkeg@nytimes.com","nombre":"pmatzkeg","rol":"almirante","llaves":2,"puntuacion":300},
+            {"usuario":"gemmsa@cbslocal.com","nombre":"gemmsa","rol":"marine","llaves":2,"puntuacion":200},
+            {"usuario":"cbastickj@guardian.co.uk","nombre":"cbastickj","rol":"marine","llaves":1,"puntuacion":100}
+        ],
+        "llaves":5, 
+        "puntuacion":845,
+        "tiempo":1555,
+        "exito": true 
+    },
+
+    {   "id":"005a",
+        "jugadores":[
+            {"usuario":"pmatzkeg@nytimes.com","nombre":"pmatzkeg","rol":"almirante","llaves":1,"puntuacion":200},
+            {"usuario":"gemmsa@cbslocal.com","nombre":"gemmsa","rol":"marine","llaves":0,"puntuacion":0},
+            {"usuario":"mcanas11@thetimes.co.uk","nombre":"mcanas11","rol":"marine","llaves":0,"puntuacion":0},
+            {"usuario":"gfold5@mayoclinic.com","nombre":"gfold5","rol":"marine","llaves":1,"puntuacion":100},
+            {"usuario":"cbastickj@guardian.co.uk","nombre":"cbastickj","rol":"marine","llaves":1,"puntuacion":100}
+        ],
+        "llaves":4, 
+        "puntuacion":400,
+        "tiempo":1800,
+        "exito": false 
+    }
+
+]
