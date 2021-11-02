@@ -15,7 +15,47 @@
     <!-- Font Awesome -->
     <link href="font/css/font-awesome.min.css" rel="stylesheet">
 
-    <script src="js/script_validate.js" type="text/javascript"></script>	 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="js/script_validate.js" type="text/javascript"></script>	
+    
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcprvgcAAAAAGEzoy68F67McMymAggsT0TkK6DH"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            // $('#form-btn').click(function(event) {
+            $('#login-form').submit(function(event) {
+                // event.preventDefault();
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LcprvgcAAAAAGEzoy68F67McMymAggsT0TkK6DH', {
+                        action: 'validarUsuario'
+                        }).then(function(token) {
+                        $('#login-form').prepend('<input type="hidden" name="token" value="' + token + '" >');
+                        $('#login-form').prepend('<input type="hidden" name="action" value="validarUsuario" >');
+                        $('#login-form').submit();
+                    });
+                });
+            });
+        });
+       
+        // $(document).ready(function() {
+            // $('#form-btn').click(function() {
+            // $('#login-form').submit(function(event) {
+            //     event.preventDefault();
+            //     grecaptcha.ready(function() {
+            //         grecaptcha.execute('6LcprvgcAAAAAGEzoy68F67McMymAggsT0TkK6DH', {
+            //             action: 'validarUsuario'
+            //             }).then(function(token) {
+            //             $('#login-form').prepend('<input type="hidden" name="token" value="' + token + '" >');
+            //             $('#login-form').prepend('<input type="hidden" name="action" value="validarUsuario" >');
+            //             $('#login-form').submit();
+            //         });
+            //     });
+            // });
+        // });
+    </script>
+    
 
 </head>
 
@@ -40,7 +80,7 @@
 
     <div class="login-page">
         <div class="form">
-            <form class="login-form" novalidate>
+            <form class="login-form" id="login-form" action="captcha/validar.php" method="POST" novalidate>
 
                 <h1 class="title-form">Conéctate</h1>
               
@@ -59,16 +99,17 @@
                     <span class="error" aria-live="polite"></span>
                 </label>
                 </p>
-
-                <button>login</button>
+                
+                <input type="submit" id="form-btn" value="Login">
 
                 <p class="message">¿No estás registrado? <a href="./registro.html">Crea una cuenta</a></p>
                 <span class="message">¿Has olvidado la contraseña? Pulsa <a href="./recuperarPass.html"> aquí</a></span>
+
             </form>
         </div>
     </div>
 
-      <script src="js/bootstrap.min.js" type="text/javascript"></script>	 
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>	 
       
 </body>
 </html>
