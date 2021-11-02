@@ -60,7 +60,7 @@ function validate_login()
         }else{
             
             alert("Usuario Conectado");
-            
+            window.location.href = "../userActions.html";
             
         }
         
