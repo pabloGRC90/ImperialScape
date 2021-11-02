@@ -48,15 +48,20 @@ function validate_login()
                 showErrorMail();
                 // Luego evitamos que se envíe el formulario cancelando el evento
                 event.preventDefault();
+                
             }
             if (!pass.validity.valid) {
                 // Si no es así, mostramos un mensaje de error apropiado
                 showErrorPass();
                 // Luego evitamos que se envíe el formulario cancelando el evento
                 event.preventDefault();
+                
             }
         }else{
+            
             alert("Usuario Conectado");
+            
+            
         }
         
     });
@@ -179,15 +184,6 @@ function validate_registro()
             }
         }else{
             alert("Registro Exitoso");
-            // grecaptcha.ready(function() {
-            //     grecaptcha.execute('6LcprvgcAAAAAGEzoy68F67McMymAggsT0TkK6DH', {
-            //         action: 'validarUsuario'
-            //         }).then(function(token) {
-            //         $('#login-form').prepend('<input type="hidden" name="token" value="' + token + '" >');
-            //         $('#login-form').prepend('<input type="hidden" name="action" value="validarUsuario" >');
-            //         $('#login-form').submit();
-            //     });
-            // });
         }
         
     });

@@ -836,3 +836,96 @@ footer {
     float: right !important;
 
 }
+
+.col-ranking{
+    min-width: 300px;
+}
+
+.table{
+    color:#252525;
+    background-color: #dadada;
+    border-radius: 10px;
+    font-size: 17px;
+    
+}
+
+.cont-ranking{
+    padding:90px 100px
+}
+
+.title-ranking{
+    color:#eeeeee;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.cont-ranking td{
+    line-height: 30px !important;
+    text-align: center;
+    border-bottom: 2px solid #292929 !important;
+    font-weight: bold;
+}
+
+.col-ranking-1,
+.col-ranking-2,
+.col-ranking-3{
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 4px solid #292929 !important;
+    background-color: #292929;
+    color:#dadada;
+}
+
+.col-ranking-2{
+    border-radius: 10px 0 0 0;
+}
+.col-ranking-3{
+    border-radius: 0 10px 0 0;
+}
+
+.section-one-partida{
+    border-top: 5px solid #ce0000;
+    padding:60px 0 10px 0
+}
+
+.section-one-partida h2{
+    padding:20px 0 40px 0
+}
+
+.section-two-partida{
+    padding: 50px 150px 150px 50px;
+    text-align: center !important;
+}
+
+.section-two-partida h2{
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+
+.title-datos-partida{
+    padding-bottom: 0px !important;
+}
+
+.title-datos-partida h2{
+    padding-bottom: 0px !important;
+}
+
+.icon-datos-partida{
+    font-size: 50px !important;
+}
+
+
+.llaves,
+.tiempo{
+    font-size: 57px;
+    text-align: left;
+    padding-left: 50px;
+    color: #646464;
+}
+
+
+.col-datos-partida{
+    display: flex;
+    justify-content: space-evenly;
+}

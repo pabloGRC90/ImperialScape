@@ -1,4 +1,8 @@
 
+
+var partidaOn=false;
+
+
 // USUARIOS 
 // USUARIOS 
 // USUARIOS 
@@ -128,7 +132,6 @@ var Player = function(email, pass, nombre, rol) {
     this.pass = pass;
     this.nombre = nombre;
     this.rol = rol;
-    this.rolPlayer = "marine";
     this.online = false;
     this.jugando = false;
     this.puntos = 0;
@@ -172,7 +175,6 @@ var Almirante = function(email, pass, nombre, ) {
     this.pass = pass;
     this.nombre = nombre;
     this.rol = rol;
-    this.rolPlayer = "almirante";
     this.online = false;
     this.jugando = false;
     this.puntos = 0;
@@ -214,7 +216,7 @@ var Partida = function(id) {
    
     this.id = id;
     this.jugadores = [];
-    this.tiempo = 1800;
+    this.tiempo = 1800000;
     this.llaves = false;
     this.puntos = 0;
 }
@@ -223,9 +225,39 @@ var Partida = function(id) {
 // Los métodos que añadimos serán compartidos por todos los zombies
 Partida.prototype.inicioPartida = function() {
 
+
+    this.jugadores=cargarUserOnline();
+    
+    setTimeout(function(){
+        partidaOn=false;
+    },this.tiempo);
+
+    partidaOn=true;
+
+    this.lanzarEnigmas();
+
+
+
 };
 
+
+
+
+
+
 Partida.prototype.lanzarEnigmas = function() {
+
+    var enigmaActivo=[];
+    var i = 0;
+
+    do {
+        enigmaActivo=cargarEnigma();
+
+        
+
+
+
+    } while(i<this.jugadores.length);
 
     
 };
@@ -233,10 +265,78 @@ Partida.prototype.lanzarEnigmas = function() {
 
 
 
-// Instanciamos un nuevo Zombie
-var usuario_01 = new User('pablosiege@gmail.com', "******");
+// Instanciamos un nuevo
+// var usuario_01 = new User('pablosiege@gmail.com', "******");
   
 
 
 
 
+
+
+
+
+
+
+
+function cargarUserOnline(){
+    fetch('/json/userOnline.json')
+        .then(respuesta => respuesta.json()) //Indicamos el formato en que se desea obtener la información
+        // .then(respuesta => console.log(respuesta))
+        
+        .then(jugadores => {
+            
+            numJugadores=Math.floor(Math.random() * (5 - 3) + 3);
+
+            jugadoresPartida=[];
+
+            for (let i=0 ; i<numJugadores; i++){
+                jugadoresPartida[i]=jugadores[i];
+            }
+
+            return jugadoresPartida;
+                               
+        })
+        
+}
+
+
+function cargarEnigma(){
+    fetch('/json/enigmas.json')
+        .then(respuesta => respuesta.json()) //Indicamos el formato en que se desea obtener la información
+        // .then(respuesta => console.log(respuesta))
+        
+        .then(enigmas => {
+            
+            var lineas=enigmas.length;
+
+            numRand1=Math.floor(Math.random() * (lineas-1));
+            numRand2=Math.floor(Math.random() * (lineas-1));
+            numRand3=Math.floor(Math.random() * (lineas-1));
+
+            numRandSolucion=Math.floor(Math.random() * (2));
+
+            switch (numRandSolucion) {
+                case 0:
+                    numRandSolucion=numRand1;
+                  break;
+                case 1:
+                    numRandSolucion=numRand2;
+                  break;
+                case 2:
+                    numRandSolucion=numRand3;
+                  break;
+              }
+
+            var enigmasArray=[
+                enigmas[numRand1].solucion,
+                enigmas[numRand2].solucion,
+                enigmas[numRand3].solucion,
+                enigmas[numRandSolucion].enigma
+            ];
+
+            return enigmasArray;
+
+        }) 
+        
+}
