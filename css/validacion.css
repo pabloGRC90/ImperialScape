@@ -17,6 +17,7 @@ and open the template in the editor.
   
   p * {
     display: block;
+
   }
   
   input[type=email]{
@@ -30,6 +31,11 @@ and open the template in the editor.
     box-sizing: border-box;
   }
   
+  .usuario{
+    min-width: 100%;
+    /* min-height: 40px; */
+    padding: 13px 0;
+  }
 
   /* Este es nuestro diseño para los campos no válidos */
   input:invalid{

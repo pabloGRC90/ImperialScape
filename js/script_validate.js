@@ -60,7 +60,7 @@ function validate_login()
         }else{
             
             alert("Usuario Conectado");
-            window.location.href = "../userActions.html";
+            window.location.href = "../userActions.php";
             
         }
         
@@ -81,6 +81,7 @@ function validate_login()
             emailError.textContent = 'Debe tener al menos '+ email.minLength +' caracteres; ha introducido '+ email.value.length +'.';
         }
         emailError.className = 'error active';
+    
     }
    
     function showErrorPass() {

@@ -89,14 +89,14 @@
   color: #EF3B3A;
 }
 body {
-  background: #c20000; 
-  background: -webkit-linear-gradient(right, #c20000, #3e0101);
-  background: -moz-linear-gradient(right, #c20000, #3e0101);
-  background: -o-linear-gradient(right, #c20000, #3e0101);
-  background: linear-gradient(to left, #c20000, #3e0101);
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;      
+  background: #c20000 !important; 
+  background: -webkit-linear-gradient(right, #c20000, #3e0101) !important;
+  background: -moz-linear-gradient(right, #c20000, #3e0101) !important;
+  background: -o-linear-gradient(right, #c20000, #3e0101) !important;
+  background: linear-gradient(to left, #c20000, #3e0101) !important;
+  font-family: "Roboto", sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;      
 }
 
 .title-form{
@@ -104,4 +104,30 @@ body {
   font-size: 28px;
   margin: 0 0 20px 0;
   color: #c20000;
+}
+
+
+.enlaces-userActions{
+  color:red;
+}
+
+.checks-admin{
+  width: auto !important;
+  /* margin:20px;
+  padding: 20px;
+  display: inline-block; */
+}
+
+.check-admin{
+  width: auto !important;
+  /* margin:20px;
+  padding: 20px;
+  display: inline-block; */
+  
+}
+
+.check-span{
+  margin: 2px;
+  padding: 2px;
+  display: inline-block;  
 }

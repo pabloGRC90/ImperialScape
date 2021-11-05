@@ -80,7 +80,7 @@
 
     <div class="login-page">
         <div class="form">
-            <form class="login-form" id="login-form" action="captcha/validar.php" method="POST" novalidate>
+            <form class="login-form" id="login-form" action="./captcha/validar.php" method="POST" novalidate>
 
                 <h1 class="title-form">Conéctate</h1>
               

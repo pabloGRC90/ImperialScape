@@ -41,7 +41,10 @@ p {
     -webkit-font-smoothing: antialiased;
     display: inline-block;
     vertical-align: middle;
-    zoom: 1;
+    /* zoom: 1; */
+    transform:scale(0.5);
+    transform-origin: 0 0;
+    /* --- */
     color: #fff;
     padding: 10px 25px;
     border: 2px solid #fff;
@@ -247,7 +250,14 @@ a {
     }
 
 .darkBg {
-    background: #ce0000;
+    background: #c20000 !important; 
+    background: -webkit-linear-gradient(right, #c20000, #3e0101) !important;
+    background: -moz-linear-gradient(right, #c20000, #3e0101) !important;
+    background: -o-linear-gradient(right, #c20000, #3e0101) !important;
+    background: linear-gradient(to left, #c20000, #3e0101) !important;
+    font-family: "Roboto", sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;      
 }
 
     .darkBg h2 {
@@ -827,10 +837,18 @@ footer {
 }
 
 
-.color-white{
+.lbl-palabras{
     color:#fff !important;
+    font-size: 20px;
+    font-weight: normal;
 }
 
+.lbl-palabras input{
+    color:#fff !important;
+    display: inline-block;
+    margin-right: 10px;
+   
+}
 
 .navbar-nav-propio{
     float: right !important;
@@ -893,7 +911,7 @@ footer {
 }
 
 .section-two-partida{
-    padding: 50px 150px 150px 50px;
+    padding: 50px 50px 150px 50px;
     text-align: center !important;
 }
 
@@ -928,4 +946,46 @@ footer {
 .col-datos-partida{
     display: flex;
     justify-content: space-evenly;
+}
+
+
+.bg-partida{
+    width: 100%;
+    height: 200px;
+    background-image: url("../images/barcoFondo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#div-enigma{
+    background-color: #e7e7e7 !important;
+    border-radius: 10px;
+    color:#4e4e4e !important;
+    margin-bottom: 40px;
+}
+
+.p-enigma{
+    padding: 50px 30px;
+    border-radius: 10px;
+    color:#4e4e4e !important;
+    
+}
+
+.container-palabras{
+    margin-bottom: 50px;
+}
+
+
+.btn-partida{
+    padding: 10px 50px;
+    background-color: rgb(189, 189, 189);
+    border:0;
+    border-radius: 5px;
+}
+
+.btn-partida:hover{
+    padding: 10px 50px;
+    background-color:#242424;
+    color:#fff;
 }

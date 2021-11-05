@@ -17,15 +17,15 @@
 	if($datos['success'] == 1 && $datos['score'] >= 0.5){
 		if($datos['action'] == 'validarUsuario'){
             echo "Validación rechaptcha exitosa<br/>";	
-		    print_r($datos);
-            // header("Location: ../index.html");
+		    // print_r($datos);
+            header("Location: ../userActions.php");
             // die();
             // validación PHP EN BASE DE DATOS
 		}
 		
     } else {
         echo "Validación rechaptcha fallida<br/>";	
-        print_r($datos);
-        // header("Location: ../login.php");    
+        // print_r($datos);
+        header("Location: ../userActions.php");   
     }
 ?>

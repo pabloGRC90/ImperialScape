@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Partidas</title>
     <link rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" href="./css/style_login.css">
     <link rel="stylesheet" href="css/bootstrap.min.css" /> 
@@ -18,7 +18,7 @@
     
 </head>
 
-<body onload="cargarRanking()">
+<body onload="cargarPartidas()">
 
     <header class="header-forms">
         
@@ -41,14 +41,18 @@
     <div class="cont-ranking">
         <div class="row mt-3">
             <div class="col">
-                <h2 class="title-ranking">RANKING</h2>
+                <h2 class="title-ranking">PARTIDAS</h2>
                 <div class="my-3">
-                    <table class="table" id="lista-jugadores">
+                    <table class="table" id="lista-partidas">
                         <thead>
                           <tr>
                             <!-- <th class="col-ranking-1 " scope="col">EMAIL</th> -->
-                            <th class="col-ranking-2" scope="col">NOMBRE</th>
-                            <th class="col-ranking-3" scope="col">PUNTUACIÓN</th>
+                            <th class="col-ranking-2" scope="col">ID</th>
+                            <th class="col-ranking-1" scope="col">jugadores</th>
+                            <th class="col-ranking-1" scope="col">llaves</th>
+                            <th class="col-ranking-1" scope="col">puntuacion</th>
+                            <th class="col-ranking-1" scope="col">tiempo</th>
+                            <th class="col-ranking-3" scope="col">exito</th>
                           </tr>
                         </thead>
                         <tbody></tbody>

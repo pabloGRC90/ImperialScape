@@ -52,10 +52,10 @@
     </header>
 
     <div class="container">
-        <div class="item"><a href="./partida.html" class="enlaces-userActions">Iniciar Partida</a></div>
-        <div class="item"><a href="./ranking.html" class="enlaces-userActions">Ver Ranking Jugadores</a></div>
-        <div class="item"><a href="./partidas.html" class="enlaces-userActions">Ver Ranking Partidas</a></div>
-        <div class="item"><a href="./usuariosConectados.html" class="enlaces-userActions">Ver Conectados</a></div>
+        <div class="item"><a href="./partida.php" class="enlaces-userActions">Iniciar Partida</a></div>
+        <div class="item"><a href="./ranking.php" class="enlaces-userActions">Ver Ranking Jugadores</a></div>
+        <div class="item"><a href="./partidas.php" class="enlaces-userActions">Ver Ranking Partidas</a></div>
+        <div class="item"><a href="./usuariosConectados.php" class="enlaces-userActions">Ver Conectados</a></div>
 
         <!-- <button id="inicioPartida">Iniciar Partida</button>
         <button id="rankingJugadores">Ver Ranking Jugadores</button>

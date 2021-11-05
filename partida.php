@@ -27,7 +27,7 @@
 
 </head>
 
-<body>
+<body onload="iniciarPartidaMain()">
 <header class="header">
 	<div class="container">
 		<nav class="navbar navbar-inverse" role="navigation">
@@ -78,7 +78,7 @@
                 <div class="item-content clearfix">
                     <i class="fa fa-clock-o fa-5x icon-datos-partida"></i>
                     <div class="text-content">
-                    <h4 class="tiempo" id="llaves">1800"</h4>
+                    <h4 class="tiempo" id="tiempo">1800"</h4>
                     </div>
                 </div><!-- end: .item-content -->
             </div><article class="clearfix"></article><!-- end: .grid-item -->
@@ -97,7 +97,7 @@
             <h2 class="h2-player" id="partida-jugador">Jugador</h2>
 
             <div class="heading text-center" id="div-enigma" class="div-enigma">         								 
-                <p class="p-enigma" id="partida-enigma">Enigma........</p>
+                <p class="p-enigma" id="p-enigma">Enigma........</p>
             </div>
 
             <div class="container-palabras">
@@ -105,17 +105,17 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-4">	
                         <label class="lbl-palabras">
-                            <input type="radio" name="palabra" id="palabra-1" value="palabra-1"> Palabra 1
+                            <input type="radio" name="palabra" id="palabra-1" value="palabra-1" class="radio-pal"> <span id="spn-pal1">Palabra 1</span>
                         </label>
                     </div>
                     <div class="col-md-4 col-sm-4">										
                         <label class="lbl-palabras">
-                            <input type="radio" name="palabra" id="palabra-2" value="palabra-2"> Palabra 2
+                            <input type="radio" name="palabra" id="palabra-2" value="palabra-2" class="radio-pal"> <span id="spn-pal2">Palabra 2</span>
                         </label>
                     </div>
                     <div class="col-md-4 col-sm-4">	
                         <label class="lbl-palabras">
-                            <input type="radio" name="palabra" id="palabra-3" value="palabra-3"> Palabra 3
+                            <input type="radio" name="palabra" id="palabra-3" value="palabra-3" class="radio-pal"> <span id="spn-pal3">Palabra 3</span>
                         </label>									
                         <!-- <h3 class="color-white" id="palabra-3">Palabra 3</h3> -->
                     </div>
@@ -123,7 +123,7 @@
 
             </div>
 
-            <input type="submit" value="Resolver" class="btn-partida">
+            <button value="Resolver" class="btn-partida" id="input-resolver">
 
             
         </form>
@@ -163,5 +163,6 @@
 <script src="js/jquery.nav.js" type="text/javascript"></script>
 <script src="js/jquery.cslider.js" type="text/javascript"></script>
 <script src="js/custom.js" type="text/javascript"></script>
+
 </body>
 </html>

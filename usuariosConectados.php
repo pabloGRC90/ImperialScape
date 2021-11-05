@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partidas</title>
+    <title>Usuarios Conectados</title>
     <link rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" href="./css/style_login.css">
     <link rel="stylesheet" href="css/bootstrap.min.css" /> 
@@ -18,8 +18,8 @@
     
 </head>
 
-<body onload="cargarPartidas()">
-
+<body onload="cargarConectados()">
+    
     <header class="header-forms">
         
         <nav class="navbar navbar-inverse" role="navigation">
@@ -41,18 +41,14 @@
     <div class="cont-ranking">
         <div class="row mt-3">
             <div class="col">
-                <h2 class="title-ranking">PARTIDAS</h2>
+                <h2 class="title-ranking">Usuarios Conectados</h2>
                 <div class="my-3">
-                    <table class="table" id="lista-jugadores">
+                    <table class="table" id="lista-conectados">
                         <thead>
                           <tr>
                             <!-- <th class="col-ranking-1 " scope="col">EMAIL</th> -->
-                            <th class="col-ranking-2" scope="col">ID</th>
-                            <th class="col-ranking-1" scope="col">jugadores</th>
-                            <th class="col-ranking-1" scope="col">llaves</th>
-                            <th class="col-ranking-1" scope="col">puntuacion</th>
-                            <th class="col-ranking-1" scope="col">tiempo</th>
-                            <th class="col-ranking-3" scope="col">exito</th>
+                            <th class="col-ranking-2" scope="col">NOMBRE</th>
+                            <th class="col-ranking-3" scope="col">PUNTUACIÓN</th>
                           </tr>
                         </thead>
                         <tbody></tbody>
@@ -62,11 +58,10 @@
         </div>
     </div>
 
-      <script src="js/bootstrap.min.js" type="text/javascript"></script>
-      
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="js/fetch.js"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="./js/fetch.js"></script>
       
 </body>
 </html>

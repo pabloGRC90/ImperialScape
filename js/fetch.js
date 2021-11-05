@@ -1,7 +1,7 @@
 const tabla = document.querySelector('#lista-jugadores tbody');
 
 function cargarRanking(){
-    fetch('/json/rankingJugadores.json')
+    fetch('json/rankingJugadores.json')
         .then(respuesta => respuesta.json()) //Indicamos el formato en que se desea obtener la información
         // .then(respuesta => console.log(respuesta))
         .then(jugadores => {
@@ -19,10 +19,11 @@ function cargarRanking(){
 }
 
 
+
 const tabla2 = document.querySelector('#lista-partidas tbody');
 
 function cargarPartidas(){
-    fetch('/json/partidas.json')
+    fetch('./json/partidas.json')
         .then(respuesta => respuesta.json()) //Indicamos el formato en que se desea obtener la información
         // .then(respuesta => console.log(respuesta))
         .then(partidas => {
@@ -44,9 +45,31 @@ function cargarPartidas(){
                     <td>${partida.tiempo}</td>
                     <td>${exito}</td>
                 `;
-                tabla.appendChild(row);                
+                tabla2.appendChild(row);                
             });
         }) // Aquí mostramos dicha información
         .catch(error => console.log('Hubo un error : ' + error.message))
 }
 
+
+
+const tabla3 = document.querySelector('#lista-conectados tbody');
+
+function cargarConectados(){
+    fetch('./json/userOnline.json')
+        .then(respuesta => respuesta.json()) //Indicamos el formato en que se desea obtener la información
+        // .then(respuesta => console.log(respuesta))
+        .then(jugadores => {
+            jugadores.forEach(jugador => {
+                const row = document.createElement('tr');
+                // console.log(jugador);
+                
+                row.innerHTML += `
+                    <td>${jugador.nombre}</td>
+                    <td>${jugador.puntuacion}</td>
+                `;
+                tabla3.appendChild(row);                
+            });
+        }) // Aquí mostramos dicha información
+        .catch(error => console.log('Hubo un error : ' + error.message))
+}

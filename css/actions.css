@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+
+
+
+body {
+  background: #c20000 !important; 
+  background: -webkit-linear-gradient(right, #c20000, #3e0101) !important;
+  background: -moz-linear-gradient(right, #c20000, #3e0101) !important;
+  background: -o-linear-gradient(right, #c20000, #3e0101) !important;
+  background: linear-gradient(to left, #c20000, #3e0101) !important;
+  font-family: "Roboto", sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;      
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.item{
+  margin:10% 5%;
+  padding:10px;
+  background-color: #fff;
+  border-radius: 10px;
+  min-width: 250px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+ 
+}
+
+
+.item a{
+  color:#c20000;
+  text-decoration: none !important;
+}
+
+@media (max-width:1400px){
+  .container{
+    display: flex;
+    flex-direction: column;
+  }
+}
