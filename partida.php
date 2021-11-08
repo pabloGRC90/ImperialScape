@@ -58,7 +58,8 @@
        
         <div class="heading text-center title-datos-partida">
             <!-- Heading -->
-            <h2>Datos Partida</h2>							
+            <!-- <button id="empezarPartida">Empezar</button> -->
+            <h2>Resumen</h2>							
         </div>
 		
         <section class="grid row clearfix clearfix-for-2cols">
@@ -96,6 +97,10 @@
         <form>
             <h2 class="h2-player" id="partida-jugador">Jugador</h2>
 
+            <select name="select-jugador" id="select-jugador" class="selectJugadorAlmirante" style="display:none" onchange="cambiarJugador()">
+                <option disabled selected>¿Quién lo resuelve?</option>
+            </select>
+
             <div class="heading text-center" id="div-enigma" class="div-enigma">         								 
                 <p class="p-enigma" id="p-enigma">Enigma........</p>
             </div>
@@ -123,7 +128,7 @@
 
             </div>
 
-            <button value="Resolver" class="btn-partida" id="input-resolver">
+            <button value="Resolver" class="btn-partida" id="input-resolver">Resolver</button>
 
             
         </form>
@@ -141,10 +146,10 @@
 				Juega, disfruta y comparte si has disfrutado con nosotros.
 			</p>
             <ul class="socialIcons">
-              <li><a href="#" class="fbIcon" target="_blank"><i class="fa fa-facebook-square fa-lg""></i></a></li>
-              <li><a href="#" class="twitterIcon" target="_blank"><i class="fa fa-twitter-square fa-lg""></i></a></li>
-              <li><a href="#" class="googleIcon" target="_blank"><i class="fa fa-google-plus-square fa-lg""></i></a></li>
-              <li><a href="#" class="pinterest" target="_blank"><i class="fa fa-pinterest-square fa-lg""></i></a></li>
+              <li><a href="#" class="fbIcon" target="_blank"><i class="fa fa-facebook-square fa-lg"></i></a></li>
+              <li><a href="#" class="twitterIcon" target="_blank"><i class="fa fa-twitter-square fa-lg"></i></a></li>
+              <li><a href="#" class="googleIcon" target="_blank"><i class="fa fa-google-plus-square fa-lg"></i></a></li>
+              <li><a href="#" class="pinterest" target="_blank"><i class="fa fa-pinterest-square fa-lg"></i></a></li>
             </ul>
           </div>
           

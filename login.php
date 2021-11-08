@@ -23,21 +23,21 @@
 
 
     <script>
-        $(document).ready(function() {
-            // $('#form-btn').click(function(event) {
-            $('#login-form').submit(function(event) {
-                // event.preventDefault();
-                grecaptcha.ready(function() {
-                    grecaptcha.execute('6LcprvgcAAAAAGEzoy68F67McMymAggsT0TkK6DH', {
-                        action: 'validarUsuario'
-                        }).then(function(token) {
-                        $('#login-form').prepend('<input type="hidden" name="token" value="' + token + '" >');
-                        $('#login-form').prepend('<input type="hidden" name="action" value="validarUsuario" >');
-                        $('#login-form').submit();
-                    });
-                });
-            });
-        });
+        // $(document).ready(function() {
+        //     // $('#form-btn').click(function(event) {
+        //     $('#login-form').submit(function(event) {
+        //         // event.preventDefault();
+        //         grecaptcha.ready(function() {
+        //             grecaptcha.execute('6LcprvgcAAAAAGEzoy68F67McMymAggsT0TkK6DH', {
+        //                 action: 'validarUsuario'
+        //                 }).then(function(token) {
+        //                 $('#login-form').prepend('<input type="hidden" name="token" value="' + token + '" >');
+        //                 $('#login-form').prepend('<input type="hidden" name="action" value="validarUsuario" >');
+        //                 $('#login-form').submit();
+        //             });
+        //         });
+        //     });
+        // });
        
         // $(document).ready(function() {
             // $('#form-btn').click(function() {
@@ -80,7 +80,9 @@
 
     <div class="login-page">
         <div class="form">
-            <form class="login-form" id="login-form" action="./captcha/validar.php" method="POST" novalidate>
+            <!-- <form class="login-form" id="login-form" action="./captcha/validar.php" method="POST" novalidate> -->
+            <!-- <form class="login-form" id="login-form" novalidate> -->
+            <form class="login-form" action="./userActions.php" novalidate>
 
                 <h1 class="title-form">Conéctate</h1>
               
@@ -100,10 +102,11 @@
                 </label>
                 </p>
                 
-                <input type="submit" id="form-btn" value="Login">
+                <button type="submit">Enviar</button>
+                <!-- <input type="submit" id="form-btn" value="Login"> -->
 
-                <p class="message">¿No estás registrado? <a href="./registro.html">Crea una cuenta</a></p>
-                <span class="message">¿Has olvidado la contraseña? Pulsa <a href="./recuperarPass.html"> aquí</a></span>
+                <p class="message">¿No estás registrado? <a href="./registro.php">Crea una cuenta</a></p>
+                <span class="message">¿Has olvidado la contraseña? Pulsa <a href="./recuperarPass.php"> aquí</a></span>
 
             </form>
         </div>

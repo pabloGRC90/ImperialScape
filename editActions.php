@@ -23,7 +23,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
     <script src="js/script_validate.js" type="text/javascript"></script>	
-    <script src="js/script_adminActions.js" type="text/javascript"></script>	
+    <script src="js/script_editActions.js" type="text/javascript"></script>	
     
 
 
@@ -31,7 +31,7 @@
 
 </head>
 
-<body class="body" onload="cargar_Usuarios()">
+<body class="body" onload="cargar_Enigmas()">
 
     <header class="header-forms">
         
@@ -52,52 +52,80 @@
 
     <div class="login-page">
         <div class="form">
-            <form class="admin-form" novalidate>
+            <form class="edit-form" novalidate>
 
-                <h1 class="title-form">Administrar</h1>
+                <h1 class="title-form">Editar</h1>
               
 
-                <p class="p-usuario">
-                    <label for="user">
-                        <select name="usuario" id="usuario" class="usuario">
-                            <option disabled selected>Seleccione Usuario</option>
+                <p class="parr-enigma">
+                    <label for="enigma">
+                        <select name="enigma" id="enigma" class="enigma">
+                            <option disabled selected>Seleccione Enigma</option>
                         </select>
                     </label>
                 </p>
 
 
                 <p>
-                    <label for="nombre">
-                        <input placeholder="Modificar nombre" type="text" id="nombre" name="nombre" minlength="8">
+                    <label for="palabra">
+                        <input placeholder="Modificar palabra" type="text" id="palabra" name="palabra" minlength="8">
                         <span class="error" aria-live="polite"></span>
                     </label>
                 </p>
 
                 <p>
-                    <label for="password">
-                        <input placeholder="Modificar Password" type="password" id="password" name="password" minlength="8">
+                    <label for="definicion">
+                        <input placeholder="Modificar definición" type="text" id="definicion" name="definicion" minlength="10">
                         <span class="error" aria-live="polite"></span>
                     </label>
                 </p>
                 
                 <div class="checks-admin">
                     <label class="checks-admin-label">
-                        <input class="check-admin" type="checkbox" name="baja" id="baja" value="baja"> <span class="check-span">Baja</span>
+                        <input class="check-admin" type="checkbox" name="baja" id="baja" value="baja"> <span class="check-span">Borrar Enigma</span>
                     </label>
-
-                    <label class="checks-admin-label">
-                        <input class="check-admin" type="checkbox" name="activo" id="activo" value="activo"> <span class="check-span">Activo</span>
-                    </label>
-
-                    <label class="checks-admin-label">
-                        <input class="check-admin" type="checkbox" name="admin" id="admin" value="admin"> <span class="check-span">Administrador</span>
-                    </label>
-                </div>  
+                </div> 
                 
-                <button type="submit" id="enviar-admin-form">Enviar</button>
+                
+                <button type="submit" id="enviar-admin-form">Modificar</button>
                 <!-- <input type="submit" id="form-btn" value="Enviar"> -->
 
             </form>
+
+
+            <div class="item"><br/>Para ver las Estadísticas de Partidas <a href="./partidas.php" class="enlaces-userActions">aquí</a></div>
+
+        </div>
+    </div>
+
+
+    <div class="login-page">
+        <div class="form">
+            <form class="add-form" novalidate>
+
+                <h1 class="title-form">Añadir</h1>
+            
+            
+                <p>
+                    <label for="new_palabra">
+                        <input placeholder="Añadir palabra" type="text" id="new_palabra" name="new_palabra" minlength="8">
+                        <span class="error" aria-live="polite"></span>
+                    </label>
+                </p>
+
+                <p>
+                    <label for="new_definicion">
+                        <input placeholder="Añadir definición" type="text" id="new_definicion" name="new_definicion" minlength="10">
+                        <span class="error" aria-live="polite"></span>
+                    </label>
+                </p>
+                
+                <button type="submit" id="enviar-admin-form">Añadir</button>
+                <!-- <input type="submit" id="form-btn" value="Enviar"> -->
+
+            </form>
+
+
         </div>
     </div>
 

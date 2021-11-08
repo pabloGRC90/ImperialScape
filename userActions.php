@@ -50,12 +50,24 @@
         </nav>
 
     </header>
-
+    <h1 class="title-actions">Acciones de usuario</h1>
     <div class="container">
+        
         <div class="item"><a href="./partida.php" class="enlaces-userActions">Iniciar Partida</a></div>
         <div class="item"><a href="./ranking.php" class="enlaces-userActions">Ver Ranking Jugadores</a></div>
         <div class="item"><a href="./partidas.php" class="enlaces-userActions">Ver Ranking Partidas</a></div>
         <div class="item"><a href="./usuariosConectados.php" class="enlaces-userActions">Ver Conectados</a></div>
+
+        <!-- <button id="inicioPartida">Iniciar Partida</button>
+        <button id="rankingJugadores">Ver Ranking Jugadores</button>
+        <button id="rankingPartidas">Ver Ranking Partidas</button> -->
+    </div>
+ 
+    <h1 class="title-actions">Administradores y Editores</h1>
+    <div class="container">
+        
+        <div class="item"><a href="./adminActions.php" class="enlaces-userActions">Administrador</a></div>
+        <div class="item"><a href="./editActions.php" class="enlaces-userActions">Editor</a></div>
 
         <!-- <button id="inicioPartida">Iniciar Partida</button>
         <button id="rankingJugadores">Ver Ranking Jugadores</button>

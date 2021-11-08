@@ -46,7 +46,7 @@
 
     <div class="login-page">
         <div class="form">
-            <form class="login-form" novalidate>
+            <form class="login-form" action="./index.html" novalidate>
 
                 <h1 class="title-form">Recuperación</h1>
               
@@ -61,7 +61,7 @@
 
                 <button>login</button>
 
-                <p class="message">¿Recuerda su contraseña? <a href="./login.html">Conéctate</a></p>
+                <p class="message">¿Recuerda su contraseña? <a href="./login.php">Conéctate</a></p>
                 <span class="message">Click <a href="./index.html"> aquí</a> para volver a la página principal </span>
             </form>
         </div>

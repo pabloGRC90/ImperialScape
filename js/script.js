@@ -18,70 +18,29 @@
 // });
 
 
-
-
-
 var partidaOn=false;
 
-
-
-// USUARIOS 
-// USUARIOS 
-// USUARIOS 
-// USUARIOS 
-// USUARIOS 
-// USUARIOS 
-// USUARIOS 
-// USUARIOS 
-// USUARIOS 
-// USUARIOS 
-// USUARIOS 
-// USUARIOS 
+ 
 // USUARIOS
-
-
-
-
+// -----------------------------------------------------------------------------------
 var User = function(nombre, email, pass , rol) {
     this.nombre = nombre;
     this.email = email;
     this.pass = pass;
     this.rol = rol;
     this.conectado = false;
-  
 }
 
-  
-// Los métodos que añadimos serán compartidos por todos los zombies
-User.prototype.iniciarPartida = function() {
-    
-    // console.log(this.nombre + " ataca a " + objetivo.nombre + " y le causa " + this.potencia + " puntos de daño");
-
+User.prototype.inicioTurno = function() {
 };
 
 User.prototype.verRanking = function() {
-
-    // console.log(this.nombre + " camina " + this.movimiento + " metros");
-
 };
 
 
-// Instanciamos un nuevo 
-var usuario_01 = new User('pablosiege@gmail.com', "******", "usuario");
-  
-
-//PASOS PARA HERENCIA
-//- Call para llamar al constructor con el contexto this.
-//- Estaclecimiento del prototipo del padre
-//- Corrección del constructor
-
-// Constructor para un tipo especializado de Usuario
+// Constructor Administrador
 var UserEditor = function(nombre, email, pass) {
-
-    //Se ha de llamar a la clase padre pasándole el contexto this y los datos del usuario como parámetro
     User.call(this, nombre, email ,pass);
-
-    //Se añaden o modifican las propiedades necesarias
     this.nombre = nombre;
     this.email = email;
     this.pass = pass;
@@ -89,31 +48,21 @@ var UserEditor = function(nombre, email, pass) {
     this.conectado = false;
 };
 
-//Se establece como prototipo de UserEditor el prototipo del padre
+
 UserEditor.prototype = Object.create(User.prototype);
-//Corregimos el constructor ya que se ha creado a partir del objeto padre
 UserEditor.prototype.constructor = UserEditor;
 
 
-//Aumentamos el prototipo de UserEditor con nuevos métodos
 UserEditor.prototype.editarPreguntas = function() {
-    
 };
 
-
-// Instanciamos un nuevo ZombieNadador
-var editor_01 = new UserEditor('pablogrcdaw90@gmail.com', "******");
+// var editor_01 = new UserEditor('pablogrcdaw90@gmail.com', "******");
   
-
-// Se comprueba que se han añadido los métodos
-// editor_01.editarPreguntas();
-
 
 // Constructor Administrador
 var Admin = function(nombre,email, pass) {
 
     User.call(this,nombre, email, pass);
-
     this.nombre = email;
     this.email = email;
     this.pass = pass;
@@ -125,137 +74,116 @@ Admin.prototype = Object.create(User.prototype);
 Admin.prototype.constructor = Admin;
 
 Admin.prototype.validarUser = function(emailUser) {
-   
 };
 
-
-var admin_01 = new Admin('pablo@gmail.com', "******");
-  
-// admin_01.validarUser('pablosiege@gmail.com');
+// var admin_01 = new Admin('pablo@gmail.com', "******");
 
 
 
 
 
-
 // JUGADORES 
-// JUGADORES 
-// JUGADORES 
-// JUGADORES 
-// JUGADORES 
-// JUGADORES 
-// JUGADORES 
-// JUGADORES 
-// JUGADORES 
-// JUGADORES 
-// JUGADORES 
-// JUGADORES 
-
-
-var Player = function(email, pass, nombre, rol) {
+// -----------------------------------------------------------------------------------
+var Player = function(email, nombre) {
     this.email = email;
-    this.pass = pass;
     this.nombre = nombre;
-    this.rol = rol;
-    this.online = false;
-    this.jugando = false;
     this.puntos = 0;
     this.record = 0;
     this.llaves = 0;
     this.activado = false;
 }
 
-  
 // Los métodos que añadimos serán compartidos por todos los Jugadores
 Player.prototype.UnirseAPartida = function() {
-
 };
 
 Player.prototype.verRanking = function() {
-
 };
 
 Player.prototype.resolverEnigma = function() {
-
-
-
 };
+
+
+
+//TURNO
+// -----------------------------------------------------------------------------------
+var Turno = function( almirante, jugadores , enigmaActivo, jugadorActivo){
+    this.almirante=almirante;
+    this.jugadores=jugadores;
+    this.enigmaActivo=enigmaActivo;
+    this.jugadorActivo=jugadorActivo;
+}
+
+var turno_01 = new Turno (false, [], [], []);
+
 
 
 // Instanciamos un nuevo Jugador
-var player_01 = new Player('pablosiege@gmail.com', "******" , "pablo");
+// var player_01 = new Player('pablosiege@gmail.com', "******" , "pablo", "marine");
   
 
-//PASOS PARA HERENCIA
-//- Call para llamar al constructor con el contexto this.
-//- Estaclecimiento del prototipo del padre
-//- Corrección del constructor
-
 // Constructor para un tipo especializado de Almirante
-var Almirante = function(email, pass, nombre, rol ) {
+var Almirante = function(email, nombre ) {
 
-    //Se ha de llamar a la clase padre pasándole el contexto this y los datos del jugador como parámetros
-    Player.call(this, email ,pass, nombre, rol);
 
-    //Se añaden o modifican las propiedades necesarias
+    Player.call(this, email, nombre);
     this.email = email;
-    this.pass = pass;
     this.nombre = nombre;
-    this.rol = rol;
-    this.online = true;
-    this.jugando = true;
-    this.puntos = 0;
-    this.record = 0;
-    this.llaves = 0;
+    // this.online = true;
+    // this.jugando = true;
+    // this.puntos = 0;
+    // this.record = 0;
+    // this.llaves = 0;
 };
 
-//Se establece como prototipo de Almirante el prototipo del padre
+
 Almirante.prototype = Object.create(Player.prototype);
-//Corregimos el constructor ya que se ha creado a partir del objeto padre
 Almirante.prototype.constructor = Almirante;
 
-
-//Aumentamos el prototipo de Almirante con nuevos métodos
 Almirante.prototype.designarEnigmas = function() {
-    
 };
 
 Almirante.prototype.penalizar = function() {
-    
 };
 
 
 // Instanciamos un nuevo Almirante
-var almirante_01 = new Almirante('pablosiege@gmail.com', "******" , "pablo");
+// var almirante_01 = new Almirante('pablosiege@gmail.com', "******" , "pablo");
   
-
-// Se comprueba que se han añadido los métodos
-almirante_01.designarEnigmas();
-
 
 
 
 // PARTIDA
-
-
-
+// -----------------------------------------------------------------------------------
 var Partida = function(id) {
     this.id = id;
     this.jugadores = [];
     this.almirante = false;
-    this.tiempo = 1800000;
+    this.tiempo = 1800;
     this.llaves = 0;
     this.puntos = 0;
 }
 
 
+Partida.prototype.nuevoTurno = async function() {
+    
+    console.log("Nuevo Turno");
+    var enigmaActivo= await this.lanzarEnigma();
+    turno_01.enigmaActivo = enigmaActivo;
+
+    console.log(turno_01.enigmaActivo);
+
+    if (partida_test.llaves==0){
+        turno_01.jugadorActivo = turno_01.jugadores[Math.floor(Math.random()*turno_01.jugadores.length)];
+    }else{
+        mostrarPanelAlmirante();
+    }
+    jugadorActivoFunct();
+};
 
 
 
-
-  
-// Los métodos que añadimos serán compartidos por todos los zombies
-Partida.prototype.inicioPartida = async function() {
+Partida.prototype.inicioTurno = async function() {
     
     console.log("COMIENZA LA PARTIDA");
     
@@ -265,102 +193,55 @@ Partida.prototype.inicioPartida = async function() {
     var arrayJugadores = [];
 
     for (let i = 0 ; i < this.jugadores.length; i++){
-        arrayJugadores.push(new Player(this.jugadores[i].email));
+        arrayJugadores.push(new Player(this.jugadores[i].email, this.jugadores[i].nombre));
     }
 
-    console.log(arrayJugadores);
-
-    
-    // setTimeout(function(){
-    //     partidaOn=false;    
-    // },this.tiempo);
-
+    turno_01.jugadores=arrayJugadores;
     partidaOn=true;
-
-    this.lanzarEnigmas();
-
+    this.nuevoTurno();
 };
 
 
-
-
-Partida.prototype.lanzarEnigmas = async function(partida) {
+Partida.prototype.lanzarEnigma = async function() {
 
     var enigmaActivo=[];
-    var i = 0;
 
     const enigma = document.getElementById("p-enigma");
     const palabra1 = document.getElementById("spn-pal1");
     const palabra2 = document.getElementById("spn-pal2");
     const palabra3 = document.getElementById("spn-pal3");
-
     
+    enigmaActivo=await cargarEnigma();
 
-    // console.log(this.jugadores)
-    do {
-        enigmaActivo=await cargarEnigma();
+    enigma.innerHTML = enigmaActivo[3];
+    palabra1.innerHTML = enigmaActivo[0];
+    palabra2.innerHTML = enigmaActivo[1];
+    palabra3.innerHTML = enigmaActivo[2];
 
-        // console.log("test------");
-        // console.log(enigmaActivo);
-        
-        // enigma.innerHTML = "hola";
-        enigma.innerHTML = enigmaActivo[3];
-        palabra1.innerHTML = enigmaActivo[0];
-        palabra2.innerHTML = enigmaActivo[1];
-        palabra3.innerHTML = enigmaActivo[2];
+    document.getElementById("palabra-1").value = enigmaActivo[0];
+    document.getElementById("palabra-2").value = enigmaActivo[1];
+    document.getElementById("palabra-3").value = enigmaActivo[2];
 
-        document.getElementById("palabra-1").value = enigmaActivo[0];
-        document.getElementById("palabra-2").value = enigmaActivo[1];
-        document.getElementById("palabra-3").value = enigmaActivo[2];
+    return enigmaActivo;
 
-        i++;
-
-    } while(i<this.jugadores.length);
-
-
-    document.getElementById("input-resolver").addEventListener("click", function(e , partida){
-        
-        var respuesta = document.querySelector('.radio-pal:checked').value;
-
-        console.log("---------------------------------------");
-        console.log(this.llaves);
-        // console.log(partida_test.llaves)
-        console.log(tiempo);
-
-        if (respuesta==enigmaActivo[4]){
-            this.llaves+=1;
-            alert("correcto");
-            recargarDisplay(this.llaves, this.tiempo);
-
-        }else{
-            alert("intentar de nuevo");
-        }
-        // console.log(respuesta)
-
-
-
-        console.log(enigmaActivo)
-
-        e.preventDefault();
-    })
-
-
-   
-
-    
 };
 
 
-
-
+Partida.prototype.comprobarResultado = function(){
+    if ((this.llaves==2) && (this.tiempo>0)){
+        alert("Habéis salido");
+    }else{
+        if (this.tiempo<=0){
+            alert("habéis pedido");
+        }
+    }
+}
 
 
 async function cargarEnigma(){
 
-
     return await fetch('./json/enigmas.json')
-        .then(respuesta => respuesta.json()) //Indicamos el formato en que se desea obtener la información
-        // .then(respuesta => console.log(respuesta))
+        .then(respuesta => respuesta.json()) 
         
         .then(enigmas => {
             
@@ -394,52 +275,61 @@ async function cargarEnigma(){
 
             console.log(enigmasArray[3]);
             return enigmasArray;
+        });
 
-        }) 
-
-        console.log("fetch");
-        
     }
-
-
-
-// Instanciamos un nuevo
-// var usuario_01 = new User('pablosiege@gmail.com', "******");
-  
 
 
 
 async function cargarUserOnline(){
     return await fetch('./json/userOnline.json')
-        .then(respuesta => respuesta.json()) //Indicamos el formato en que se desea obtener la información
-        // .then(respuesta => console.log(respuesta))
+    .then(respuesta => respuesta.json()) //Indicamos el formato en que se desea obtener la información
+    // .then(respuesta => console.log(respuesta))
+    
+    .then(jugadores => {
         
-        .then(jugadores => {
-            
-            numJugadores=Math.floor(Math.random() * (5 - 3) + 3);
+        numJugadores=Math.floor(Math.random() * (5 - 3) + 3);
+        jugadoresPartida=[];
 
-            jugadoresPartida=[];
-
-            for (let i=0 ; i<numJugadores; i++){
-                jugadoresPartida[i]=jugadores[i];
-            }
-
-            return jugadoresPartida;
-                               
-        })
-        
+        for (let i=0 ; i<numJugadores; i++){
+            jugadoresPartida[i]=jugadores[i];
+        }
+        return jugadoresPartida;             
+    }) 
 }
 
-
+var partida_test = new Partida(999);
 
 
 
 function iniciarPartidaMain(){
-    var partida_test = new Partida(999);
-    partida_test.inicioPartida();
+
+    // document.getElementById("empezarPartida").addEventListener("click", function(e){
+    //     var tiempoReloj = partida_test.tiempo;
+    //     console.log(tiempoReloj);
+    //     function actualizarReloj() {
+    //         document.getElementById('tiempo').innerHTML = tiempoReloj + '"';
+    //         if (tiempoReloj == 0) {
+    //             // Cuenta regresiva ha finalizado
+    //             document.getElementById('tiempo').innerHTML = "Fin";
+    //         } else {
+    //             tiempoReloj--;
+    //             setTimeout(actualizarReloj(), 1000);
+    //         }
+    //     }
+    //     actualizarReloj();
+    // });
+  
+
+    partida_test.inicioTurno();
+
+    document.getElementById("input-resolver").addEventListener("click", function(e){
+        e.preventDefault();
+        validarEnigma();
+        partida_test.nuevoTurno(); 
+    });
+    // actualizarReloj();
 }
-
-
 
 
 function recargarDisplay(llaves,tiempo){
@@ -448,5 +338,90 @@ function recargarDisplay(llaves,tiempo){
 
     vllaves.innerHTML=llaves;
     vtiempo.innerHTML=tiempo;
+}
+
+
+function validarEnigma(){
+
+    var acierto=false;
+    var respuesta = document.querySelector('.radio-pal:checked').value;
+
+    if (respuesta==turno_01.enigmaActivo[4]){
+        if (partida_test.llaves==0){
+            var almiranteActivo=new Almirante(turno_01.jugadorActivo.email, turno_01.jugadorActivo.nombre)
+            turno_01.almirante=almiranteActivo;
+        }
+        partida_test.llaves+=1;
+        turno_01.jugadorActivo.llaves+=1;
+        alert("correcto");
+        acierto=true;
+    }else{
+        alert("has fallado");
+        acierto=false;
+        partida_test.tiempo-=60;
+    }
+    partida_test.comprobarResultado();
+    recargarDisplay(partida_test.llaves, partida_test.tiempo);
+}
+
+
+function jugadorActivoFunct(){
+    var nombreJugador = document.getElementById("partida-jugador");
+
+    if (turno_01.almirante){
+        nombreJugador.innerHTML="Almirante: " + turno_01.almirante.nombre;
+    }else{
+        nombreJugador.innerHTML="Jugador: " + turno_01.jugadorActivo.nombre;
+    }
+}
+
+
+function mostrarPanelAlmirante(){
+    document.getElementById("select-jugador").style.display="";
+    
+    var select = document.getElementsByName("select-jugador")[0];
+
+    for (var i = 0 ; i<turno_01.jugadores.length ; i++){
+        var option = document.createElement("option");
+        option.text = turno_01.jugadores[i].nombre;
+        option.value = turno_01.jugadores[i].nombre;
+        select.add(option);
+    }
+}
+
+function cambiarJugador(){
+    var newActivePlayer = document.getElementById("select-jugador").value;
+    var nombreJugador = document.getElementById("partida-jugador");
+
+    for (var i = 0 ; i<turno_01.jugadores.length ; i++){
+       if (turno_01.jugadores[i].nombre==newActivePlayer){
+           turno_01.jugadorActivo=turno_01.jugadores[i];
+       } 
+    }
+    nombreJugador.innerHTML="Jugador: " + turno_01.jugadorActivo.nombre;    
+}
+
+
+function selectPlayerAlmirante(){
+    
+    var select = document.getElementsByName("select-jugador")[0];
+
+    if (select.hasChildNodes()){
+        while (select.childNodes.length >= 1 ){
+            select.removeChild(select.firstChild );
+        }
+    }
+        
+    for (var i = 0 ; i<turno_01.jugadores.length ; i++){
+        var option = document.createElement("option");
+        option.text = turno_01.jugadores[i].nombre;
+        option.value = turno_01.jugadores[i].nombre;
+        select.add(option);
+    }
 
 }
+
+
+
+
+

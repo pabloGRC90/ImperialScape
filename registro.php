@@ -43,7 +43,7 @@
 
     <div class="login-page">
         <div class="form">
-            <form class="login-form" novalidate>
+            <form class="login-form" action="./userActions.php" novalidate>
 
                 <h1 class="title-form">Regístrate</h1>
               
@@ -73,7 +73,7 @@
 
                 <button type="submit">Enviar</button>
 
-                <p class="message">¿Ya está registrado? <a href="./login.html">Conéctate</a></p>
+                <p class="message">¿Ya está registrado? <a href="./login.php">Conéctate</a></p>
                 
             </form>
         </div>

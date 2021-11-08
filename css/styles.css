@@ -989,3 +989,13 @@ footer {
     background-color:#242424;
     color:#fff;
 }
+
+.color-white{
+    color:#fff;
+}
+
+
+.selectJugadorAlmirante{
+    margin: 10px 0px 50px 0px;
+    padding: 10px;
+}

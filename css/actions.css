@@ -44,3 +44,11 @@ body {
     flex-direction: column;
   }
 }
+
+
+
+.title-actions{
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
