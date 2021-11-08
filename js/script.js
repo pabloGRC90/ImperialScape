@@ -189,7 +189,6 @@ Partida.prototype.inicioTurno = async function() {
     
     this.jugadores=await cargarUserOnline();
 
-    console.log(this.jugadores.length);
     var arrayJugadores = [];
 
     for (let i = 0 ; i < this.jugadores.length; i++){
@@ -228,11 +227,13 @@ Partida.prototype.lanzarEnigma = async function() {
 
 
 Partida.prototype.comprobarResultado = function(){
-    if ((this.llaves==2) && (this.tiempo>0)){
+    if ((this.llaves==5) && (this.tiempo>0)){
         alert("Habéis salido");
+        window.location.href = "exito.php";
     }else{
         if (this.tiempo<=0){
             alert("habéis pedido");
+            window.location.href = "fracaso.php";
         }
     }
 }

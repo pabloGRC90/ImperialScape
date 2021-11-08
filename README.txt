@@ -15,3 +15,5 @@ Tras resolverse el primer enigma será el almirante quien decida quier resolver�
 Si se acierta se añade una llave.
 Si se falla se restan 60 segundos (no implementado el control del almirante para las penalizaciones por fallo)
 
+Si se consiguen las 5 llaves antes de terminar el tiempo (se descuenta cada error), se consigue salir con éxito.
+
